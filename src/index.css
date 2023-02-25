@@ -1,0 +1,37 @@
+:root {
+  --bg-color: #06060a;
+  --primary-color: #fff;
+
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline-offset: 0.25rem;
+}
+
+body,
+html {
+  min-height: 100vh;
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.5;
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+}
+
+img {
+  max-width: 100%;
+}
