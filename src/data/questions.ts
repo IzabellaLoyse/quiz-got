@@ -1,4 +1,4 @@
-export const data = [
+const data = [
   {
     question: 'Quem matou Joanna Lannister?',
     options: [
@@ -22,7 +22,7 @@ export const data = [
   },
   {
     question:
-      'Qual foi o primeiro lobo gigante, pertencentes aos Stark, a morrer?Qual foi o primeiro lobo gigante, pertencentes aos Stark, a morrer?',
+      'Qual foi o primeiro lobo gigante, pertencentes aos Stark, a morrer?',
     options: [
       'Lady (Sansa)',
       'Fantasma/Ghost (Jon)',
@@ -36,4 +36,17 @@ export const data = [
     options: ['Jeor Mormont', 'Brynden Rivers', 'Samwell Tarly', 'Jon Snow'],
     answer: 'Samwell Tarly',
   },
+
+  {
+    question: 'Quem mandou matar Ned Stark?',
+    options: [
+      'Jaime Lannister',
+      'Tyrion Lannister',
+      'Joffrey Baratheon',
+      'Robert Baratheon',
+    ],
+    answer: 'Joffrey Baratheon',
+  },
 ];
+
+export default data;

@@ -1,6 +1,8 @@
 :root {
   --bg-color: #06060a;
   --primary-color: #fff;
+  --bg-button-color: #33a1d9;
+  --bg-button-hover-color: #22a4e6;
 
   --font-regular: 400;
   --font-medium: 500;

@@ -1,33 +1,18 @@
-import { IButton } from "../../interfaces/button";
-import styles from "./button.module.css";
+import { IButton } from '../../interfaces/button';
+import styles from './button.module.css';
 
-function Button({
-  message,
-  isBigButton,
-  routeButton,
-  isLinkButton = false,
-}: IButton) {
+function Button({ message, isBigButton, onClick }: IButton) {
   return (
     <>
-      {isLinkButton ? (
-        <a
-          href={routeButton}
-          className={`${styles.button} ${
-            isBigButton ? styles.bigButton : styles.smallButton
-          }`}
-        >
-          {message}
-        </a>
-      ) : (
-        <button
-          type="button"
-          className={`${styles.button} ${
-            isBigButton ? styles.bigButton : styles.smallButton
-          }`}
-        >
-          {message}
-        </button>
-      )}
+      <button
+        type="button"
+        onClick={onClick}
+        className={`${styles.button} ${
+          isBigButton ? styles.bigButton : styles.smallButton
+        }`}
+      >
+        {message}
+      </button>
     </>
   );
 }

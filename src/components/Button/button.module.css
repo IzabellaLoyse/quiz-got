@@ -4,14 +4,25 @@ a {
 
 .button {
   color: var(--primary-color);
-  background-color: #33a1d9;
+  background-color: var(--bg-button-color);
   cursor: pointer;
   text-align: center;
   padding: 0.5rem 1rem;
   border: 0;
   border-radius: 8px;
+  transition: 200ms ease-in-out;
+  font-weight: var(--font-bold);
+}
+
+.button:hover {
+  background-color: var(--bg-button-hover-color);
 }
 
 .bigButton {
   width: 12rem;
+  height: 2.2rem;
+}
+
+.smallButton {
+  width: 8rem;
 }

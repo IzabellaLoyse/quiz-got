@@ -1,8 +1,21 @@
-import Button from "../../components/Button/Button";
-import styles from "./home.module.css";
-import imgGotWorld from "/img/got.png";
+import { useNavigate } from 'react-router-dom';
+import Button from '../../components/Button/Button';
+import { TYPESTATE } from '../../enum/typeState';
+import useQuizContext from '../../hooks/useQuizContext';
+import styles from './home.module.css';
+import imgGotWorld from '/img/got.png';
 
 function Home() {
+  const { dispatch } = useQuizContext();
+
+  const navigate = useNavigate();
+
+  const handleStartQuiz = () => {
+    dispatch({ type: TYPESTATE.CHANGE_STATE });
+
+    navigate('/quiz');
+  };
+
   return (
     <main>
       <div className={styles.wrapperContainer}>
@@ -20,8 +33,7 @@ function Home() {
         <Button
           message="Iniciar Quiz"
           isBigButton={true}
-          routeButton="/quiz"
-          isLinkButton={true}
+          onClick={handleStartQuiz}
         />
       </div>
     </main>
