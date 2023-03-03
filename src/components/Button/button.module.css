@@ -12,6 +12,8 @@ a {
   border-radius: 8px;
   transition: 200ms ease-in-out;
   font-weight: var(--font-bold);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
 }
 
 .button:hover {

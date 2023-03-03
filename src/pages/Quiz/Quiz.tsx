@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Button from '../../components/Button/Button';
 import { TYPESTATE } from '../../enum/typeState';
 import useQuizContext from '../../hooks/useQuizContext';
+import styles from './quiz.module.css';
 
 function Quiz() {
   const { state, dispatch } = useQuizContext();
@@ -13,8 +14,10 @@ function Quiz() {
   }, [dispatch]);
 
   return (
-    <section>
-      <div className="question">
+    <section className={styles.wrapper}>
+      <h1>Quiz Game of Thrones</h1>
+
+      <div className={styles.questionContainer}>
         <p>
           Pergunta {state.currentQuestion + 1} de {state.questions.length}
         </p>

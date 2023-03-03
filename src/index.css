@@ -1,6 +1,7 @@
 :root {
   --bg-color: #06060a;
   --primary-color: #fff;
+  --second-color: #181717;
   --bg-button-color: #33a1d9;
   --bg-button-hover-color: #22a4e6;
 
@@ -23,7 +24,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
