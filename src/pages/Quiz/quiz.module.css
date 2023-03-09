@@ -21,9 +21,12 @@
   margin: 0 auto;
 }
 
+.questions {
+  padding-top: 1rem;
+}
+
 .questionContainer p {
   font-weight: var(--font-medium);
-  padding-top: 1rem;
   font-size: 1.1rem;
 }
 

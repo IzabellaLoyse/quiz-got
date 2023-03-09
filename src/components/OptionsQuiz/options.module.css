@@ -1,0 +1,17 @@
+.option {
+  padding: 0.5rem 1rem;
+  background-color: #070707;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 400ms ease-in-out;
+}
+
+.option:hover {
+  opacity: 1;
+}
+
+.option p {
+  text-align: center;
+}

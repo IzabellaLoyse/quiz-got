@@ -10,6 +10,7 @@ export interface IState {
   gameStage: STAGES;
   questions: IQuestion[];
   currentQuestion: number;
+  score: number;
 }
 
 export interface IQuestion {

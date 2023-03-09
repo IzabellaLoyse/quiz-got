@@ -1,0 +1,23 @@
+.gameOverContainer {
+  margin-top: 5rem;
+}
+
+.gameOverDescription {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gameOverDescription h2 {
+  font-size: 2rem;
+}
+
+.gameOverDescription p {
+  font-size: 1.1rem;
+}
+
+.gameOverDescription img {
+  padding-bottom: 1rem;
+}

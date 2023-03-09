@@ -1,13 +1,23 @@
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button/Button';
+import OptionsQuiz from '../../components/OptionsQuiz/OptionsQuiz';
 import { TYPESTATE } from '../../enum/typeState';
 import useQuizContext from '../../hooks/useQuizContext';
 import styles from './quiz.module.css';
 
 function Quiz() {
   const { state, dispatch } = useQuizContext();
+  const navigate = useNavigate();
 
   const currentQuestionQuiz = state.questions[state.currentQuestion];
+
+  const handleChangeQuestion = () => {
+    dispatch({ type: TYPESTATE.CHANGE_QUESTION });
+
+    if (state.currentQuestion + 1 >= state.questions.length)
+      navigate('/game-over');
+  };
 
   useEffect(() => {
     dispatch({ type: TYPESTATE.REORDER_QUESTIONS });
@@ -18,18 +28,17 @@ function Quiz() {
       <h1>Quiz Game of Thrones</h1>
 
       <div className={styles.questionContainer}>
-        <p>
+        <p className={styles.questions}>
           Pergunta {state.currentQuestion + 1} de {state.questions.length}
         </p>
-        <h2>{currentQuestionQuiz.question}</h2>
+        <h2>{currentQuestionQuiz?.question}</h2>
         <div className="optionsContainer">
-          <p>Opções</p>
+          {currentQuestionQuiz.options.map((option) => (
+            <OptionsQuiz key={option} option={option} />
+          ))}
         </div>
 
-        <Button
-          message="Continuar"
-          onClick={() => dispatch({ type: TYPESTATE.CHANGE_QUESTION })}
-        />
+        <Button message="Continuar" onClick={handleChangeQuestion} />
       </div>
     </section>
   );

@@ -13,6 +13,7 @@ const initialState: IState = {
   gameStage: STAGES.START,
   questions,
   currentQuestion: 0,
+  score: 0,
 };
 
 const reorderQuestions = (state: IState) => {
@@ -43,10 +44,21 @@ const quizReducer = (state: IState, action: Action) => {
 
     case TYPESTATE.CHANGE_QUESTION:
       const nextQuestion = state.currentQuestion + 1;
-      return {
-        ...state,
-        currentQuestion: nextQuestion,
-      };
+
+      return nextQuestion >= state.questions.length
+        ? {
+            ...state,
+            gameStage: STAGES.END,
+            currentQuestion: 0,
+          }
+        : {
+            ...state,
+            gameStage: state.gameStage,
+            currentQuestion: nextQuestion,
+          };
+
+    case TYPESTATE.NEW_GAME:
+      return initialState;
 
     default:
       return state;
