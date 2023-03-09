@@ -1,6 +1,6 @@
 .option {
   padding: 0.5rem 1rem;
-  background-color: #070707;
+  background-color: var(--third-color);
   border-radius: 8px;
   margin-bottom: 1rem;
   cursor: pointer;
@@ -8,10 +8,23 @@
   transition: 400ms ease-in-out;
 }
 
-.option:hover {
+.option:hover,
+.option:focus {
   opacity: 1;
+  background-color: var(--focus-color);
 }
 
 .option p {
   text-align: center;
+}
+
+.optionCorrect:focus {
+  background-color: var(--bg-correct-color);
+  font-weight: var(--font-bold);
+}
+
+.optionWrong:focus {
+  background-color: var(--bg-wrong-color);
+  font-weight: var(--font-bold);
+  opacity: 0.5;
 }

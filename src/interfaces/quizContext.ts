@@ -1,6 +1,9 @@
 import { STAGES } from '../enum/stages';
 
-export type Action = { type: string };
+export type Action = {
+  type: string;
+  payload?: { answer: string; option: string };
+};
 
 export interface IQuizContext {
   children: React.ReactNode;
@@ -11,6 +14,7 @@ export interface IState {
   questions: IQuestion[];
   currentQuestion: number;
   score: number;
+  isAnswerSelected: boolean;
 }
 
 export interface IQuestion {

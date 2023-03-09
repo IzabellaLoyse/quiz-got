@@ -14,6 +14,7 @@ const initialState: IState = {
   questions,
   currentQuestion: 0,
   score: 0,
+  isAnswerSelected: false,
 };
 
 const reorderQuestions = (state: IState) => {
@@ -25,8 +26,7 @@ const QuizContext = createContext<IQuizState>({
   dispatch: () => {},
 });
 
-const quizReducer = (state: IState, action: Action) => {
-  console.log(state, action);
+const quizReducer = (state: IState, action: Action): IState => {
   switch (action.type) {
     case TYPESTATE.CHANGE_STATE:
       return {
@@ -59,6 +59,17 @@ const quizReducer = (state: IState, action: Action) => {
 
     case TYPESTATE.NEW_GAME:
       return initialState;
+
+    case TYPESTATE.CHECK_ANSWER:
+      const { answer, option } = action.payload || {};
+      const isAnswerSelected = option !== undefined ? true : false;
+      const correctAnswer = answer === option ? 1 : 0;
+
+      return {
+        ...state,
+        score: state.score + correctAnswer,
+        isAnswerSelected,
+      };
 
     default:
       return state;

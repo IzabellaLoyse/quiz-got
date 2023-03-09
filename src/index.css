@@ -2,8 +2,13 @@
   --bg-color: #06060a;
   --primary-color: #fff;
   --second-color: #181717;
+  --third-color: #393838;
+  --focus-color: #070707;
+
   --bg-button-color: #33a1d9;
   --bg-button-hover-color: #22a4e6;
+  --bg-correct-color: #2c9c28;
+  --bg-wrong-color: #470303;
 
   --font-regular: 400;
   --font-medium: 500;

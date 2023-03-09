@@ -19,6 +19,13 @@ function Quiz() {
       navigate('/game-over');
   };
 
+  const handleSelectOption = (option: string) => {
+    dispatch({
+      type: TYPESTATE.CHECK_ANSWER,
+      payload: { answer: currentQuestionQuiz.answer, option },
+    });
+  };
+
   useEffect(() => {
     dispatch({ type: TYPESTATE.REORDER_QUESTIONS });
   }, [dispatch]);
@@ -34,11 +41,18 @@ function Quiz() {
         <h2>{currentQuestionQuiz?.question}</h2>
         <div className="optionsContainer">
           {currentQuestionQuiz.options.map((option) => (
-            <OptionsQuiz key={option} option={option} />
+            <OptionsQuiz
+              key={option}
+              option={option}
+              answer={currentQuestionQuiz.answer}
+              onSelectOption={() => handleSelectOption(option)}
+            />
           ))}
         </div>
 
-        <Button message="Continuar" onClick={handleChangeQuestion} />
+        {state.isAnswerSelected && (
+          <Button message="Continuar" onClick={handleChangeQuestion} />
+        )}
       </div>
     </section>
   );
